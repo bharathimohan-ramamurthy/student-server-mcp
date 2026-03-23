@@ -1,4 +1,4 @@
-![mcp_student_records_architecture](https://github.com/user-attachments/assets/f2310475-776e-4e3f-88e5-5b77acbb8a6d)# Student Records MCP Server
+# Student Records MCP Server
 
 A fully functional **Model Context Protocol (MCP)** server built in Python that manages a student records system. Any MCP-compatible AI client (Claude Desktop, VS Code Copilot, MCP Inspector) can call its tools using natural language.
 
@@ -85,6 +85,7 @@ students.db
 
 ## 3. System Architecture
 
+![mcp_student_records_architecture](https://github.com/user-attachments/assets/f2310475-776e-4e3f-88e5-5b77acbb8a6d)
 ![Uploading mcp_<svg width="100%" viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
