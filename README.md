@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# student-server-mcp
-=======
 # Student Records MCP Server
 
 A fully functional **Model Context Protocol (MCP)** server built in Python that manages a student records system. Any MCP-compatible AI client (Claude Desktop, VS Code Copilot, MCP Inspector) can call its tools using natural language.
