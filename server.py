@@ -2,6 +2,8 @@ from mcp.server.fastmcp import FastMCP
 from database import get_connection, init_db
 from seed_data import seed
 import json
+import uvicorn
+from starlette.middleware.cors import CORSMiddleware
 
 # Initialize DB on startup
 init_db()
@@ -158,4 +160,11 @@ def search_course(query: str) -> str:
 #    mcp.run(transport="stdio")
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http")
+    app = mcp.streamable_http_app()
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+    uvicorn.run(app, host="127.0.0.1", port=8000)
