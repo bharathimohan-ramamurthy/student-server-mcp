@@ -472,17 +472,15 @@ mcp dev server.py
 | Console Fetch Interceptor | Paste JS intercept script in DevTools Console |
 | Server-side Log File | Add `logging` to server.py → `tail -f mcp_trace.log` |
 
-Claude Desktop / Inspector
-        ↓
-spawns your server.py as a child process
-        ↓
-sends initialize handshake automatically
-        ↓
-discovers tools via tools/list
-        ↓
-calls tools/call whenever needed
-        ↓
-reads response from stdout
+Claude Desktop / MCP Inspector
+        │
+        │  spawns as child process
+        ▼
+    server.py
+        │
+        │  communicates via stdin/stdout
+        ▼
+   JSON-RPC messages
 ---
 
 ## 9. VS Code Integration
