@@ -363,12 +363,9 @@ taskkill /PID <PID_NUMBER> /F
 Always send `initialize` first, then any tool call.
 
 ```bash
-# 1. Initialize (always first)
-python server.py << 'EOF'
-{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","clientInfo":{"name":"test","version":"1.0"},"capabilities":{}}}
-{"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
-{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"courses_available","arguments":{}}}
-EOF
+# 1. Initialize
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","clientInfo":{"name":"test","version":"1.0"},"capabilities":{}}}
+{"jsonrpc":"2.0","method":"notifications/initialized","params":{}}' | python server.py
 
 # 2. List tools
 {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
