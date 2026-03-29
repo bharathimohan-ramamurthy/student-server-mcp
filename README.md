@@ -674,5 +674,19 @@ lsof -ti:6274,6277,3000,8000 | xargs kill -9
 
 ---
 
-*Student Records MCP Server — Reference Guide — Built with Python, FastMCP, SQLite*
->>>>>>> main
+### Port
+**Stop the process at port xxxx**
+```
+lsof -ti :6277 | xargs kill -9
+```
+
+**Verify it's free xxxx**
+```
+lsof -ti :6277 | xargs kill -9
+```
+
+**Stop by name xxxx**
+```
+pkill -f "mcp"
+pkill -f "node"
+```
