@@ -81,6 +81,7 @@ students.db
 | `add_course` | Insert new course |
 | `search_course` | Search courses by name or domain |
 
+
 ---
 
 ## 3. System Architecture
@@ -471,6 +472,17 @@ mcp dev server.py
 | Console Fetch Interceptor | Paste JS intercept script in DevTools Console |
 | Server-side Log File | Add `logging` to server.py → `tail -f mcp_trace.log` |
 
+Claude Desktop / Inspector
+        ↓
+spawns your server.py as a child process
+        ↓
+sends initialize handshake automatically
+        ↓
+discovers tools via tools/list
+        ↓
+calls tools/call whenever needed
+        ↓
+reads response from stdout
 ---
 
 ## 9. VS Code Integration
